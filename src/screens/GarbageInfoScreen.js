@@ -19,6 +19,7 @@ export default class GarbageInfoScreen extends React.Component {
     const resRef1 = await Fire.shared.getCollection(code)
     console.log(resRef1.get('name'));
     this.setState({item: resRef1.get('name') || 'わかりません。'});
+    this.returnRandomComment();
   }
 
   render() {
@@ -32,7 +33,7 @@ export default class GarbageInfoScreen extends React.Component {
         <FadeInView style={{ width: 250, height: 100, backgroundColor: 'powderblue' }}>
         <Image source={require('../img/mDhqPR8n_400x400.png')}></Image>
         <Text style={styles.garbageContent}>
-          { this.state.item }
+          {this.state.item}
         </Text>
         <Text style={styles.garbageComment}>
           {this.state.comment}
