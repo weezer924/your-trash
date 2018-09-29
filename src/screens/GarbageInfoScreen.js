@@ -20,7 +20,7 @@ export default class GarbageInfoScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.garbageTitle}>あなたのゴミの名は</Text>
+        <Text style={styles.garbageTitle}>おまんのゴミの名は</Text>
         <FadeInView style={{ width: 250, height: 50, backgroundColor: 'powderblue' }}>
           <Text style={styles.garbageContent}>
             { this.state.item }
