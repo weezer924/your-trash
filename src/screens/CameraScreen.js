@@ -32,7 +32,7 @@ export default class CameraScreen extends React.Component {
     this.setState(
       { barcodeScanning: !this.state.barcodeScanning },
       Alert.alert(`君のバーコードは: ${code.data}`, "", [
-        {text:"ゴミの名を見る", onPress:() => navigate('GarbageInfo', {barcodeValue:this.barcodeValue})}
+        {text:"ゴミの名を見る", onPress:() => navigate('GarbageInfo', {barcodeValue: code.data})}
       ])
     );
   };
