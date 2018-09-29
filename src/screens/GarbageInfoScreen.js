@@ -7,7 +7,7 @@ import Fire from '../components/Firebase'
 export default class GarbageInfoScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { item: 'わかりません。', comment: '', name: '' };
+    this.state = { item: 'わかりません。', comment: '' };
   }
 
   componentWillMount() {
@@ -18,7 +18,7 @@ export default class GarbageInfoScreen extends React.Component {
     const code = navigation.getParam('barcodeValue');
     const resRef1 = await Fire.shared.getCollection(code)
     console.log(resRef1.get('name'));
-    this.setState({name: resRef1.get('name') || '分かんねぇよ〜'});
+    this.setState({item: resRef1.get('name') || 'わかりません。'});
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class GarbageInfoScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.wakakoWrap}>
           <Image source={require('../img/mon018.jpg')} style={styles.wakako}></Image>
-          <Text style={styles.garbageTitle}>おまんのゴミの名は...{this.state.name}</Text>
+          <Text style={styles.garbageTitle}>おまんのゴミの名は...</Text>
         </View>
 
         <FadeInView style={{ width: 250, height: 100, backgroundColor: 'powderblue' }}>
