@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation'
 import { Constants } from 'expo';
 
@@ -16,6 +16,9 @@ export default class HomeScreen extends React.Component {
     return(
       <View style={styles.container}>
         <View style={styles.button}>
+        <Image
+          source={require('../img/20170630.png')}
+        />
           <Button
             title="ゴミの名を調べる"
             color="white"

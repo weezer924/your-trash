@@ -16,7 +16,7 @@ const App = createStackNavigator({
   GarbageInfo: GarbageInfoScreen
 }, {
   navigationOptions: {
-    headerTitle: 'ゴミの名は',
+    headerTitle: 'ゴミの名は。',
     headerStyle: {
       backgroundColor: '#265366',
     },
