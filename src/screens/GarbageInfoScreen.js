@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
 import FadeInView from '../components/FadeInView';
+import Fire from '../components/Firebase'
+import firebase from "firebase";
 
 export default class GarbageInfoScreen extends React.Component {
   constructor(props) {
@@ -15,6 +17,18 @@ export default class GarbageInfoScreen extends React.Component {
     if (barcodeNumber === 4903041002520) {
       this.setState({ item: 'タラタラしてんじゃねーよ' });
     }
+  }
+
+  async componentDidMount() {
+    const barcodeNumber1 = '4514603360912';
+    const barcodeNumber2 = '4903041002520';
+    const barcodeNumber3 = '4903333186198';
+    const resRef1 = await Fire.shared.getCollection(barcodeNumber1)
+    console.log(resRef1.get('name'));
+    const resRef2 = await Fire.shared.getCollection(barcodeNumber2)
+    console.log(resRef2.get('name'));
+    const resRef3 = await Fire.shared.getCollection(barcodeNumber3)
+    console.log(resRef3.get('name'));
   }
 
   render() {

@@ -11,9 +11,9 @@ import CameraScreen from './src/screens/CameraScreen'
 GLOBAL.self = GLOBAL;
 
 const App = createStackNavigator({
-  Home: HomeScreen,
+  Home: GarbageInfoScreen,
   Camera: CameraScreen,
-  GarbageInfo: GarbageInfoScreen
+  // GarbageInfo: GarbageInfoScreen
 }, {
   navigationOptions: {
     headerTitle: 'ゴミの名は。',

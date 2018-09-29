@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzVOEa0UPLWWJakr9hs8mH9nZbndhoNng",
@@ -9,4 +10,16 @@ const firebaseConfig = {
   messagingSenderId: "192298168354"
 };
 
-firebase.initializeApp(firebaseConfig);
+class Fire {
+  constructor() {
+    firebase.initializeApp(firebaseConfig);
+    firebase.firestore().settings({ timestampsInSnapshots: true });
+  }
+
+  getCollection(code) {
+    return firebase.firestore().collection('yourTrash').doc(code).get();
+  }
+}
+
+Fire.shared = new Fire();
+export default Fire;
