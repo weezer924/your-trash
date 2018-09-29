@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
+import GarbageInfoScreen from './src/screens/GarbageInfoScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import CameraScreen from './src/screens/CameraScreen'
 
@@ -12,6 +13,7 @@ GLOBAL.self = GLOBAL;
 const App = createStackNavigator({
   Home: HomeScreen,
   Camera: CameraScreen,
+  GarbageInfo: GarbageInfoScreen
 }, {
   navigationOptions: {
     headerTitle: 'ゴミの名は',

@@ -9,6 +9,7 @@ export default class CameraScreen extends React.Component {
     type: 'back',
     ratio: '16:9',
     barcodeScanning: false,
+    barcodeValue: ''
   };
 
   async componentWillMount() {
@@ -27,9 +28,12 @@ export default class CameraScreen extends React.Component {
   handleMountError = ({ message }) => console.error(message);
 
   onBarCodeScanned = code => {
+    const { navigate } = this.props.navigation;
     this.setState(
       { barcodeScanning: !this.state.barcodeScanning },
-      Alert.alert(`君のバーコードは: ${code.data}`)
+      Alert.alert(`君のバーコードは: ${code.data}`, "", [
+        {text:"ゴミの名を見る", onPress:() => navigate('GarbageInfo')}
+      ])
     );
   };
 
