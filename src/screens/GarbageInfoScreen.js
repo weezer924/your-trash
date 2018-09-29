@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import FadeInView from '../components/FadeInView';
+
 export default class GarbageInfoScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,11 @@ export default class GarbageInfoScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.garbageTitle}>あなたのゴミの名は</Text>
-        <Text style={styles.garbageContent}>{ this.state.item }</Text>
+        <FadeInView style={{ width: 250, height: 50, backgroundColor: 'powderblue' }}>
+          <Text style={styles.garbageContent}>
+            { this.state.item }
+          </Text>
+        </FadeInView>
       </View>
     );
   }
