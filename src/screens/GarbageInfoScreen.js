@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
 import FadeInView from '../components/FadeInView';
 
@@ -20,12 +20,14 @@ export default class GarbageInfoScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.garbageTitle}>おまんのゴミの名は</Text>
-        <FadeInView style={{ width: 250, height: 50, backgroundColor: 'powderblue' }}>
+        <Image source={require('../img/mon018.jpg')}></Image>
+        <Text style={styles.garbageTitle}>おまんのゴミの名は...</Text>
+        <FadeInView style={{ width: 250, height: 100, backgroundColor: 'powderblue' }}>
+          <Image source={require('../img/mDhqPR8n_400x400.png')}></Image>
           <Text style={styles.garbageContent}>
             { this.state.item }
           </Text>
-          <Text>
+          <Text style={styles.garbageContent}>
             {this.state.comment}
           </Text>
         </FadeInView>
@@ -40,8 +42,6 @@ export default class GarbageInfoScreen extends React.Component {
       "瀧「大事なゴミ。忘れたくないゴミ。忘れちゃダメなゴミ。何だ、何だ、何だ？名前は…！」",
       "一葉おばあちゃん「おや、三葉。あんた今、ゴミを見とるな？」",
       "瀧「ずっと何かを、ゴミ箱を、探している」",
-      "三葉「瀧くん、あの、ゴミ... 憶えて、ない？」",
-      "瀧「大丈夫、憶えてる。ゴミ、ゴミ、ゴミ。名前は...」",
       "三葉「あのゴミの名前が、思い出せんの」",
     ];
     var randomComment = commentArray[Math.floor(Math.random() * commentArray.length)];
@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
   },
   garbageTitle: {
     backgroundColor: '#fff',
-    paddingBottom: 32,
-    fontSize: 16,
+    paddingBottom: 15,
+    fontSize: 25,
   },
   garbageContent: {
-    fontSize: 16,
+    fontSize: 20,
   },
 });
 
