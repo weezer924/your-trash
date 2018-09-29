@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   garbageContent: {
     fontSize: 20,
     fontWeight: 'bold',
-    paddingBottom: 5,
+    paddingBottom: 15,
   },
   garbageComment: {
     fontSize: 20,
