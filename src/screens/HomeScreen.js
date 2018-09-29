@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { createStackNavigator } from 'react-navigation'
 
 export default class HomeScreen extends React.Component {
   constructor(props){
@@ -14,11 +15,13 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
         <Button
           title="ゴミの名は？"
-          color="#841584">
+          color="#841584"
+          onPress={() => navigate('Camera')}>
         </Button>
         <Text>
           {this.state.comment}
