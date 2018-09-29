@@ -1,21 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import HomeScreen from './src/screens/HomeScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+// ↓これを書かないとエラーが出る
+// https://github.com/apollographql/apollo-link/issues/75#issuecomment-333328069
+GLOBAL.self = GLOBAL;
+
+const App = createStackNavigator({
+  Home: HomeScreen,
+}, {
+  navigationOptions: {
+    headerTitle: 'ゴミの名は',
+    headerStyle: {
+      backgroundColor: '#265366',
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
   },
 });
+
+export default App;
