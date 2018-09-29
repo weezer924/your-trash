@@ -20,16 +20,19 @@ export default class GarbageInfoScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require('../img/mon018.jpg')}></Image>
-        <Text style={styles.garbageTitle}>おまんのゴミの名は...</Text>
+        <View style={styles.wakakoWrap}>
+          <Image source={require('../img/mon018.jpg')} style={styles.wakako}></Image>
+          <Text style={styles.garbageTitle}>おまんのゴミの名は...</Text>
+        </View>
+
         <FadeInView style={{ width: 250, height: 100, backgroundColor: 'powderblue' }}>
-          <Image source={require('../img/mDhqPR8n_400x400.png')}></Image>
-          <Text style={styles.garbageContent}>
-            { this.state.item }
-          </Text>
-          <Text style={styles.garbageContent}>
-            {this.state.comment}
-          </Text>
+        <Image source={require('../img/mDhqPR8n_400x400.png')}></Image>
+        <Text style={styles.garbageContent}>
+          { this.state.item }
+        </Text>
+        <Text style={styles.garbageComment}>
+          {this.state.comment}
+        </Text>
         </FadeInView>
       </View>
     );
@@ -52,20 +55,36 @@ export default class GarbageInfoScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     width: '100%',
     paddingTop: 32,
     paddingLeft: 16,
     paddingRight: 16,
     paddingBottom: 16,
   },
+  wakakoWrap: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   garbageTitle: {
     backgroundColor: '#fff',
-    paddingBottom: 15,
-    fontSize: 25,
+    // paddingBottom: 15,
+    fontSize: 35,
+    flex: 2,
+    flexDirection: 'row',
+    height: 200,
+  },
+  wakako: {
+    flex: 1,
+    flexDirection: 'row',
   },
   garbageContent: {
     fontSize: 20,
+    fontWeight: 'bold',
+    paddingBottom: 5,
   },
+  garbageComment: {
+    fontSize: 20,
+  }
 });
 
