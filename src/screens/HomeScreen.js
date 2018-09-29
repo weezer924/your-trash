@@ -15,12 +15,14 @@ export default class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
-        <Button
-          title="ゴミの名は？"
-          color="#841584"
-          style={styles.button}
-          onPress={() => navigate('Camera')}>
-        </Button>
+        <View style={styles.button}>
+          <Button
+            title="ゴミの名を調べる"
+            color="white"
+            // style={styles.button}
+            onPress={() => navigate('Camera')}>
+          </Button>
+        </View>
       </View>
     );
   }
@@ -42,4 +44,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#34495e',
   },
+  button: {
+    backgroundColor: '#668ad8',
+    padding: 20,
+    borderRadius: 10,
+  }
  })
